@@ -1,0 +1,61 @@
+{
+    "name": "test-ringostat",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.11.2",
+        "@testing-library/react": "^10.4.7",
+        "@testing-library/user-event": "^12.1.0",
+        "connected-react-router": "^6.8.0",
+        "history": "^5.0.0",
+        "prop-types": "^15.6.2",
+        "qhistory": "^1.0.3",
+        "query-string": "^6.8.1",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "react-hot-loader": "^4.12.6",
+        "react-redux": "^7.2.1",
+        "react-router": "^5.2.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "3.4.1",
+        "redux": "^4.0.1",
+        "redux-actions": "^2.6.5",
+        "redux-thunk": "^2.3.0",
+        "reselect": "^4.0.0",
+        "semantic-ui-css": "^2.4.1",
+        "semantic-ui-react": "^1.1.0",
+        "redux-logger": "^3.0.6",
+        "serve": "^11.1.0"
+    },
+    "devDependencies": {
+        "eslint-config-airbnb": "^18.1.0",
+        "eslint-config-frontend": "github:88Maxwell/eslint-config-frontend#4fdaeee74f46c9580e4858ce304bded4e97f913b",
+        "eslint-loader": "^4.0.2",
+        "eslint-plugin-fetch": "^0.0.1",
+        "eslint-plugin-import": "^2.17.3",
+        "eslint-plugin-more": "^1.0.0",
+        "eslint-plugin-no-require-lodash": "1.1.0",
+        "eslint-plugin-prefer-spread": "^1.0.3",
+        "eslint-plugin-react": "^7.13.0",
+        "eslint-plugin-security": "^1.4.0",
+        "gh-pages": "^3.1.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
+}
