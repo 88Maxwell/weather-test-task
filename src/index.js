@@ -9,10 +9,6 @@ import App from "./components/App";
 import configureStore from "./utils/configureStore";
 
 const history = createBrowserHistory();
-const store = configureStore(undefined, {
-    history,
-    isLogged : config.common.storeLoggerEnabled
-});
+const store = configureStore({ history });
 
 ReactDOM.render(<App store={store} history={history} />, document.getElementById("root"));
-

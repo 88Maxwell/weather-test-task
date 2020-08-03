@@ -14,6 +14,6 @@ const getRoot = (state) => state.wether.current;
 
 const getWetherState = createSelector(getRoot, (state) => state.state);
 const getWetherError = createSelector(getRoot, (state) => state.error);
-const getWether = createSelector(getRoot, (state) => state.data || []);
+const getWether = createSelector(getRoot, (state) => state.data);
 
 export { getWetherState, getWetherError, getWether };

@@ -1,13 +1,16 @@
 import RequestClient from "./utils/RequestClient";
+import config from "./config";
 
-const openWetherApiMapRequest = new RequestClient();
+const openWetherApiMapRequest = new RequestClient(
+    {
+        apiUrl : config.openWeatherMap.apiUrl,
+        prefix : config.openWeatherMap.prefix
+    },
+    {
+        appid : config.openWeatherMap.appid
+    }
+);
 
-export const task = {
-    list   : (params) => openWetherApiMapRequest.get("/", null, params),
-    create : (data) => openWetherApiMapRequest.post("/create", data),
-    update : (data) => openWetherApiMapRequest.post(`/edit/${data.id}`, data)
-};
-
-export const user = {
-    login : (data) => openWetherApiMapRequest.post("/login", data)
+export const wetherApi = {
+    getWether : (params) => openWetherApiMapRequest.get("/weather", null, params)
 };

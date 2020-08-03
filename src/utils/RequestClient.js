@@ -2,8 +2,10 @@ import queryString from "query-string";
 import config from "../config";
 
 class RequestClient {
-    constructor({ prefix = "api/v1" } = {}) {
+    constructor({ apiUrl = config.apiUrl, prefix = "api/v1" } = {}, queryObject = {}) {
+        this.queryObject = queryObject;
         this.prefix = prefix;
+        this.apiUrl = apiUrl;
         this.token = "";
         [ "get", "post", "patch", "delete" ].forEach((method) => {
             this[method] = async (url, data, params) => this.request({
@@ -18,27 +20,18 @@ class RequestClient {
     async request({
         url, method, body, params = {}
     }) {
-        if (this.token) {
-            // eslint-disable-next-line
-            params.token = this.token;
+        let queryObject = params;
+
+        if (this.queryObject) {
+            queryObject = { ...this.queryObject, ...params };
         }
-        const queryParams = Object.keys(params).length
-            ? { ...params, developer: config.developer }
-            : { developer: config.developer };
-        const query = `?${queryString.stringify(queryParams)}`;
-
-        const formData = new FormData();
-
-        // eslint-disable-next-line
-        for (const name in body) {
-            formData.append(name, body[name]);
-        }
-
-        const response = await fetch(`${config.apiUrl}/${this.prefix}${url}${query}`, {
+        const query = `?${queryString.stringify(queryObject)}`;
+        const fetchUrl = `${this.apiUrl}/${this.prefix}${url}${query}`;
+        const response = await fetch(fetchUrl, {
             method,
             withCredentials : true,
             crossDomain     : true,
-            body            : method !== "GET" ? formData : undefined
+            body            : method !== "GET" ? JSON.stringify(body) : undefined
         });
 
         const json = await response.json();
@@ -49,7 +42,7 @@ class RequestClient {
     }
 
     setToken(token) {
-        this.token = token;
+        this.queryObject = { ...this.queryObject, token };
     }
 }
 

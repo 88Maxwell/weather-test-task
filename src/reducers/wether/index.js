@@ -1,3 +1,4 @@
+import { combineReducers } from "redux";
 import current from "./current";
 
-export default current;
+export default combineReducers({ current });

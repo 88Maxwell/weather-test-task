@@ -1,19 +1,30 @@
 import { createAction } from "redux-actions";
 import { GET_WETHER_SUCCESS, GET_WETHER_REQUEST, GET_WETHER_FAIL } from "../actionTypes";
+import { wetherApi } from "../api";
 
-export const confirmDoorInstallationRequest = createAction(GET_WETHER_SUCCESS);
-export const confirmDoorInstallationSuccess = createAction(GET_WETHER_REQUEST);
-export const confirmDoorInstallationFailure = createAction(GET_WETHER_FAIL);
+export const getWetherRequest = createAction(GET_WETHER_SUCCESS);
+export const getWetherSuccess = createAction(GET_WETHER_REQUEST);
+export const getWetherFailure = createAction(GET_WETHER_FAIL);
 
-
-export default function confirmDoorInstallation() {
+export default function getWether({ lat = 35, lon = 139, city: q = "Kyiv" }) {
     return async (dispatch) => {
-        dispatch(confirmDoorInstallationRequest());
+        const data = {
+            lat,
+            lon,
+            q
+        };
 
+        dispatch(getWetherRequest(data));
         try {
-            return null;
+            const res = await dispatch(wetherApi.getWether(data));
+
+            dispatch(getWetherSuccess(res));
+
+            return res;
         } catch (err) {
-            return err;
+            dispatch(getWetherFailure(err));
+
+            return null;
         }
     };
 }

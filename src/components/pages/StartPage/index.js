@@ -1,3 +1,4 @@
-import StartPage from "./StartPage";
+import StartPageContainer from "./StartPageContainer";
 
-export default StartPage;
+export { default as StartPage } from "./StartPage";
+export default StartPageContainer;
