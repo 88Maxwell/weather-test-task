@@ -8,3 +8,5 @@ export default {
         appid  : "a57bae3a1ee62cc1d67d655a0eafcdbf"
     }
 };
+
+// Should be hidden at .env files

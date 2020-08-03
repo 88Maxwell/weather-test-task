@@ -7,7 +7,6 @@ export default function configureStoreGlobal({ history, isLogged = true }) {
     const middlewares = [ thunk ];
 
     if (history) {
-        console.log("THERE");
         middlewares.push(routerMiddleware(history));
     }
 
@@ -23,9 +22,3 @@ export default function configureStoreGlobal({ history, isLogged = true }) {
 
     return createStore(rootReducer, undefined, compose(applyMiddleware(...middlewares)));
 }
-
-
-// export default ({ history }) => applyMiddleware(
-//     thunk,
-//     routerMiddleware(history)
-// )(createStore)(configureRootReducer({ history }));

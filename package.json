@@ -1,11 +1,8 @@
 {
-    "name": "test-ringostat",
+    "name": "wether-test-task",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@testing-library/jest-dom": "^5.11.2",
-        "@testing-library/react": "^10.4.7",
-        "@testing-library/user-event": "^12.1.0",
         "connected-react-router": "^6.8.0",
         "history": "^4.7.2",
         "prop-types": "^15.6.2",
@@ -45,7 +42,9 @@
         "start": "react-scripts start",
         "build": "react-scripts build",
         "test": "react-scripts test",
-        "eject": "react-scripts eject"
+        "eject": "react-scripts eject",
+        "serve": "serve -s build",
+        "deploy": "gh-pages -d build"
     },
     "browserslist": {
         "production": [
