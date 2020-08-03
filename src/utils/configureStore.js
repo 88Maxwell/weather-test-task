@@ -3,10 +3,11 @@ import thunk from "redux-thunk";
 import { routerMiddleware } from "connected-react-router";
 import configureRootReducer from "../reducers";
 
-export default function configureStoreGlobal({ history, isLogged = false }) {
+export default function configureStoreGlobal({ history, isLogged = true }) {
     const middlewares = [ thunk ];
 
     if (history) {
+        console.log("THERE");
         middlewares.push(routerMiddleware(history));
     }
 

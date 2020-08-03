@@ -7,7 +7,7 @@ const defaultSettings = {
 };
 
 export const usePosition = (watch = false, settings = defaultSettings) => {
-    const [ position, setPosition ] = useState({});
+    const [ position, setPosition ] = useState(null);
     const [ error, setError ] = useState(null);
 
     const onChange = ({ coords, timestamp }) => {

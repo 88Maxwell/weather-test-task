@@ -6,5 +6,4 @@ import wether from "./wether";
 export default ({ history }) => combineReducers({
     router : connectRouter(history),
     wether
-    // ...combineReducers({ wether })
 });

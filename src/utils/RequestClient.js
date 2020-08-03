@@ -36,11 +36,11 @@ class RequestClient {
 
         const json = await response.json();
 
-        return json;
-    }
+        if (+json.cod !== 200) {
+            throw json.message;
+        }
 
-    setToken(token) {
-        this.queryObject = { ...this.queryObject, token };
+        return json;
     }
 }
 
