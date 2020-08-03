@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { Grid } from "semantic-ui-react";
+import { Grid, Loader, Message } from "semantic-ui-react";
 import styles from "./styles.module.css";
 import WetherCard from "../../widgets/WetherCard";
 import { usePosition } from "../../../hooks/usePosition";
@@ -9,24 +9,27 @@ import { usePosition } from "../../../hooks/usePosition";
 function StartPage({
     wetherState, wetherError, wether, onGetWether
 }) {
-    const { position, error } = usePosition(false);
+    const { position } = usePosition(false);
 
-    useEffect(async () => {
+    useEffect(() => {
         const { latitude: lat, longitude: lon } = position || {};
 
         onGetWether({ lat, lon });
     }, [ onGetWether ]);
-
-    console.log("wetherState :>> ", wetherState);
-    console.log("wetherError :>> ", wetherError);
-    console.log("wether :>> ", wether);
 
     return (
         <main className={styles.wrapper}>
             <Grid>
                 <Grid.Row>
                     <Grid.Column>
-                        <WetherCard />
+                        {!wether && wetherState === "loading" && <Loader active />}
+                        {wether && wetherState === "loaded" && <WetherCard />}
+                        {!wether && wetherState === "error" && (
+                            <Message negative>
+                                <Message.Header>Something happened wrong!</Message.Header>
+                                <p>{wetherError}</p>
+                            </Message>
+                        )}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>

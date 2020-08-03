@@ -36,9 +36,7 @@ class RequestClient {
 
         const json = await response.json();
 
-        if (json.status !== "ok") throw json.error;
-
-        return json.message;
+        return json;
     }
 
     setToken(token) {

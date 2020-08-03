@@ -3,7 +3,6 @@ import "semantic-ui-css/semantic.min.css";
 import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
-import config from "./config";
 
 import App from "./components/App";
 import configureStore from "./utils/configureStore";
