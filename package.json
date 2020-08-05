@@ -1,6 +1,6 @@
 {
     "name": "wether-test-task",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "private": false,
     "homepage": "https://88maxwell.github.io/wether-test-task/",
     "dependencies": {
