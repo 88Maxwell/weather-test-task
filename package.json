@@ -1,8 +1,8 @@
 {
-    "name": "wether-test-task",
-    "version": "1.0.3",
+    "name": "weather-test-task",
+    "version": "1.0.4",
     "private": false,
-    "homepage": "https://88maxwell.github.io/wether-test-task/",
+    "homepage": "https://88maxwell.github.io/weather-test-task/",
     "dependencies": {
         "connected-react-router": "^6.8.0",
         "history": "^4.7.2",
