@@ -73,11 +73,11 @@ function StartPage({
                         <Dropdown.Menu>
                             {cities.map((el) => (
                                 <Link
-                                    key={el.text}
+                                    key={el.text()}
                                     component={Dropdown.Item}
                                     to={`/weather?city=${el.value}`}
                                 >
-                                    {el.text}
+                                    {el.text()}
                                 </Link>
                             ))}
                         </Dropdown.Menu>
