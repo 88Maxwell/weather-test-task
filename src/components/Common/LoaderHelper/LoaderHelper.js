@@ -2,7 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function LoaderHelper({
-    data, state, LoadingComponent, ErrorComponent = null, DataComponent
+    data,
+    state,
+    LoadingComponent,
+    ErrorComponent = null,
+    DataComponent
 }) {
     return (
         <>

@@ -3,16 +3,26 @@ import React, { useEffect, useState } from "react";
 import qs from "qs";
 import PropTypes from "prop-types";
 import {
-    Grid, Loader, Message, Dropdown, Segment, Header
+    Grid,
+    Loader,
+    Message,
+    Dropdown,
+    Segment,
+    Header
 } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import WeatherWidget from "../../Weather/WeatherWidget";
 import usePosition from "../../../hooks/usePosition";
 import LoaderHelper from "../LoaderHelper";
 import { cities } from "../../../domens/Weather/constants";
+import messages from "./messages";
 
 function StartPage({
-    weatherState, weatherError, weather, onGetWeather, location
+    weatherState,
+    weatherError,
+    weather,
+    onGetWeather,
+    location
 }) {
     const { position } = usePosition(false);
     const [ warningVisible, setWarningVisible ] = useState(true);
@@ -42,7 +52,7 @@ function StartPage({
                         DataComponent={<WeatherWidget weather={weather} />}
                         ErrorComponent={(
                             <Message negative>
-                                <Message.Header>Something happened wrong!</Message.Header>
+                                <Message.Header>{messages.smthingHappendWrong()}</Message.Header>
                                 <p>{weatherError}</p>
                             </Message>
                         )}
@@ -50,7 +60,7 @@ function StartPage({
                 ) : (
                     warningVisible && (
                         <Message onDismiss={handleDismissWarning} warning>
-                            <Message.Header>Please enable geolocation!</Message.Header>
+                            <Message.Header>{messages.pleaseEnableGeolocation()}</Message.Header>
                         </Message>
                     )
                 )}
@@ -58,8 +68,8 @@ function StartPage({
 
             <Grid.Row>
                 <Segment>
-                    <Header>Watch weather by city</Header>
-                    <Dropdown text="Choose an option">
+                    <Header>{messages.watchWeatherByCity()}</Header>
+                    <Dropdown text={messages.chooseCity()}>
                         <Dropdown.Menu>
                             {cities.map((el) => (
                                 <Link

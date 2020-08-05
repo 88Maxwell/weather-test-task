@@ -3,14 +3,24 @@ import React, { useEffect } from "react";
 import qs from "qs";
 import PropTypes from "prop-types";
 import {
-    Grid, Loader, Message, Button, Segment
+    Grid,
+    Loader,
+    Message,
+    Button,
+    Segment
 } from "semantic-ui-react";
 import WeatherWidget from "../WeatherWidget";
 import LoaderHelper from "../../Common/LoaderHelper";
 import usePosition from "../../../hooks/usePosition";
+import messages from "./messages";
 
 function WeatherPage({
-    weatherState, weatherError, weather, onGetWeather, onGoBack, location
+    weatherState,
+    weatherError,
+    weather,
+    onGetWeather,
+    onGoBack,
+    location
 }) {
     const { position } = usePosition(false);
     const { search } = location;
@@ -26,12 +36,16 @@ function WeatherPage({
         }
     }, [ onGetWeather, city, position ]);
 
-
     return (
         <Grid as="main" verticalAlign="middle" padded centered>
             <Grid.Row>
                 <Segment basic>
-                    <Button labelPosition="left" onClick={onGoBack} icon="left chevron" content="Back" />
+                    <Button
+                        labelPosition="left"
+                        onClick={onGoBack}
+                        icon="left chevron"
+                        content={messages.back()}
+                    />
                 </Segment>
             </Grid.Row>
             <Grid.Row>
@@ -42,7 +56,7 @@ function WeatherPage({
                     DataComponent={<WeatherWidget weather={weather} />}
                     ErrorComponent={(
                         <Message negative>
-                            <Message.Header>Something happened wrong!</Message.Header>
+                            <Message.Header>{messages.smthingHappendWrong()}</Message.Header>
                             <p>{weatherError}</p>
                         </Message>
                     )}
