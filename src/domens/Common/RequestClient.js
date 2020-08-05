@@ -1,8 +1,10 @@
 import queryString from "query-string";
-import config from "../../config";
+
+const defaultApiUrl = "http://localhost:3000/";
+const defaultApiPrefix = "api/v1";
 
 class RequestClient {
-    constructor({ apiUrl = config.apiUrl, prefix = "api/v1" } = {}, queryObject = {}) {
+    constructor({ apiUrl = defaultApiUrl, prefix = defaultApiPrefix } = {}, queryObject = {}) {
         this.queryObject = queryObject;
         this.prefix = prefix;
         this.apiUrl = apiUrl;

@@ -1,6 +1,6 @@
 {
     "name": "wether-test-task",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "private": false,
     "homepage": "https://88maxwell.github.io/wether-test-task/",
     "dependencies": {
@@ -30,7 +30,7 @@
         "eslint-config-frontend": "github:88Maxwell/eslint-config-frontend#4fdaeee74f46c9580e4858ce304bded4e97f913b",
         "eslint-loader": "^4.0.2",
         "eslint-plugin-fetch": "^0.0.1",
-        "eslint-plugin-import": "^2.17.3",
+        "eslint-plugin-import": "^2.17.3",  
         "eslint-plugin-more": "^1.0.0",
         "eslint-plugin-no-require-lodash": "1.1.0",
         "eslint-plugin-prefer-spread": "^1.0.3",

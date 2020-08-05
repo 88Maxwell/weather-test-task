@@ -6,9 +6,10 @@ import {
     Grid, Loader, Message, Dropdown, Button, Segment, Header
 } from "semantic-ui-react";
 import WetherWidget from "../WetherWidget";
-import { usePosition } from "../../../hooks/usePosition";
+import usePosition from "../../../hooks/usePosition";
 import LoaderHelper from "../../Common/LoaderHelper";
 import { cities } from "../../../domens/Wether/constants";
+import config from "../../../config";
 
 function WetherPage({
     wetherState, wetherError, wether, onGetWether, onGoBack, onOpenWetherByCity, location
@@ -18,7 +19,7 @@ function WetherPage({
     const [ warningVisible, setWarningVisible ] = useState(true);
 
     const { search, pathname } = location;
-    const isCustomCity = !(pathname === "/" && search === "");
+    const isCustomCity = !((pathname === "/" || pathname === config.common.publicUrl) && search === "");
     const { city } = qs.parse(search.slice(1));
 
     useEffect(() => {
@@ -29,7 +30,7 @@ function WetherPage({
         } else {
             onGetWether({ lat, lon });
         }
-    }, [ onGetWether, search ]);
+    }, [ onGetWether, city, position ]);
 
     const handleDismissWarning = () => setWarningVisible(false);
     const handleChangeDropdownValue = (e, { value }) => setDropdownValue(value);
@@ -45,7 +46,7 @@ function WetherPage({
                 )}
             </Grid.Row>
             <Grid.Row>
-                {(position || isCustomCity) ? (
+                {position || isCustomCity ? (
                     <LoaderHelper
                         data={wether}
                         state={wetherState}

@@ -6,7 +6,7 @@ const defaultSettings = {
     maximumAge         : 0
 };
 
-export const usePosition = (watch = false, settings = defaultSettings) => {
+export default (watch = false, settings = defaultSettings) => {
     const [ position, setPosition ] = useState(null);
     const [ error, setError ] = useState(null);
 
@@ -40,7 +40,7 @@ export const usePosition = (watch = false, settings = defaultSettings) => {
 
         // eslint-disable-next-line consistent-return
         return () => watcher && navigator.geolocation.clearWatch(watcher);
-    }, [ settings.enableHighAccuracy, settings.timeout, settings.maximumAge ]);
+    }, [ settings.enableHighAccuracy, settings.timeout, settings.maximumAge, settings, watch ]);
 
     return { position, error };
 };
