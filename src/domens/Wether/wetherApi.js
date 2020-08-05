@@ -1,5 +1,5 @@
-import RequestClient from "./utils/RequestClient";
-import config from "./config";
+import RequestClient from "../Common/RequestClient";
+import config from "../../config";
 
 const openWetherApiMapRequest = new RequestClient(
     {
@@ -11,6 +11,6 @@ const openWetherApiMapRequest = new RequestClient(
     }
 );
 
-export const wetherApi = {
+export default {
     getWether : (params) => openWetherApiMapRequest.get("/weather", null, params)
 };

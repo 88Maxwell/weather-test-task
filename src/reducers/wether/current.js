@@ -1,8 +1,8 @@
 import { createSelector } from "reselect";
 
-import { GET_WETHER_SUCCESS, GET_WETHER_REQUEST, GET_WETHER_FAIL } from "../../actionTypes";
+import { GET_WETHER_SUCCESS, GET_WETHER_REQUEST, GET_WETHER_FAIL } from "../../actionTypes/wether";
 
-import createLoadableReducer from "../../utils/createLoadableReducer";
+import createLoadableReducer from "../../domens/Common/createLoadableReducer";
 
 export default createLoadableReducer({
     requestActionType : GET_WETHER_REQUEST,

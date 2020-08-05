@@ -1,6 +1,6 @@
 import { createAction } from "redux-actions";
-import { GET_WETHER_SUCCESS, GET_WETHER_REQUEST, GET_WETHER_FAIL } from "../actionTypes";
-import { wetherApi } from "../api";
+import { GET_WETHER_SUCCESS, GET_WETHER_REQUEST, GET_WETHER_FAIL } from "../actionTypes/wether";
+import wetherApi from "../domens/Wether/wetherApi";
 
 export const getWetherRequest = createAction(GET_WETHER_REQUEST);
 export const getWetherSuccess = createAction(GET_WETHER_SUCCESS);

@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import PropTypes from "prop-types";
 import { ConnectedRouter } from "connected-react-router";
-import Routes from "./Routes";
+import Routes from "../Routes";
 
 function App({ history, store }) {
     return (

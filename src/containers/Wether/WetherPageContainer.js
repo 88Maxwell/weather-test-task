@@ -2,10 +2,10 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { withRouter } from "react-router";
 import { push, goBack } from "connected-react-router";
-import StartPage from "./StartPage";
+import WetherPage from "../../components/Wether/WetherPage";
 
-import { getWetherState, getWetherError, getWether } from "../../../reducers/wether/current";
-import getWetherAction from "../../../actions/getWether";
+import { getWetherState, getWetherError, getWether } from "../../reducers/wether/current";
+import getWetherAction from "../../actions/getWether";
 
 const mapState = createStructuredSelector({
     wetherState : getWetherState,
@@ -19,4 +19,4 @@ const mapDispatch = (dispatch) => ({
     onGoBack           : () => dispatch(goBack())
 });
 
-export default withRouter(connect(mapState, mapDispatch)(StartPage));
+export default withRouter(connect(mapState, mapDispatch)(WetherPage));

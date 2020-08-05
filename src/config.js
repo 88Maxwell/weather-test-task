@@ -1,12 +1,13 @@
+const {
+    REACT_APP_API_URL,
+    REACT_APP_PREFIX,
+    REACT_APP_APP_ID
+} = process.env;
+
 export default {
-    common : {
-        storeLoggerEnabled : false
-    },
     openWeatherMap : {
-        apiUrl : "https://api.openweathermap.org",
-        prefix : "data/2.5",
-        appid  : "a57bae3a1ee62cc1d67d655a0eafcdbf"
+        apiUrl : REACT_APP_API_URL,
+        prefix : REACT_APP_PREFIX,
+        appid  : REACT_APP_APP_ID
     }
 };
-
-// Should be hidden at .env files

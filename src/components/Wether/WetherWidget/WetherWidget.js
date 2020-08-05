@@ -1,7 +1,7 @@
 import React from "react";
 import { List, Segment, Header } from "semantic-ui-react";
 import WetherWidgetRecord from "../WetherWidgetRecord";
-import WetherPropTypes from "./WetherPropTypes";
+import wetherPropTypes from "../../../domens/Wether/wetherPropTypes";
 
 function WetherWidget({ wether }) {
     const { main, wind, name } = wether;
@@ -21,6 +21,6 @@ function WetherWidget({ wether }) {
     );
 }
 
-WetherWidget.propTypes = WetherPropTypes;
+WetherWidget.propTypes = wetherPropTypes;
 
 export default WetherWidget;

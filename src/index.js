@@ -4,8 +4,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { createBrowserHistory } from "history";
 
-import App from "./components/App";
-import configureStore from "./utils/configureStore";
+import App from "./components/Common/App";
+import configureStore from "./domens/Common/configureStore";
 
 const history = createBrowserHistory();
 const store = configureStore({ history });

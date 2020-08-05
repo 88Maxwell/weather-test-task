@@ -1,5 +1,5 @@
 import queryString from "query-string";
-import config from "../config";
+import config from "../../config";
 
 class RequestClient {
     constructor({ apiUrl = config.apiUrl, prefix = "api/v1" } = {}, queryObject = {}) {
