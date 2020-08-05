@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.css","styles.module.css"],"names":[],"mappings":"AAAA,UAEI,wBACJ,CCHA,uBACI,gBAAiB,CACjB,WACJ","file":"main.18857360.chunk.css","sourcesContent":["html,\nbody {\n    background-color: #4bae51;\n}\n",".wrapper {\n    min-height: 100vh;\n    height: 100%;\n}\n"]}

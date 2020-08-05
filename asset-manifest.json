@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/static/css/main.18857360.chunk.css",
-    "main.js": "/static/js/main.13e80bce.chunk.js",
-    "main.js.map": "/static/js/main.13e80bce.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.f8d27cd5.js",
-    "runtime-main.js.map": "/static/js/runtime-main.f8d27cd5.js.map",
-    "static/css/2.7df41cd5.chunk.css": "/static/css/2.7df41cd5.chunk.css",
-    "static/js/2.4e9fd2d5.chunk.js": "/static/js/2.4e9fd2d5.chunk.js",
-    "static/js/2.4e9fd2d5.chunk.js.map": "/static/js/2.4e9fd2d5.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.749e0481bf3d713dba0e26141f08bccd.js": "/precache-manifest.749e0481bf3d713dba0e26141f08bccd.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.7df41cd5.chunk.css.map": "/static/css/2.7df41cd5.chunk.css.map",
-    "static/css/main.18857360.chunk.css.map": "/static/css/main.18857360.chunk.css.map",
-    "static/js/2.4e9fd2d5.chunk.js.LICENSE.txt": "/static/js/2.4e9fd2d5.chunk.js.LICENSE.txt",
-    "static/media/semantic.min.css": "/static/media/outline-icons.ef60a4f6.woff"
+    "main.css": "/wether-test-task/static/css/main.fffd5f8c.chunk.css",
+    "main.js": "/wether-test-task/static/js/main.9e701988.chunk.js",
+    "main.js.map": "/wether-test-task/static/js/main.9e701988.chunk.js.map",
+    "runtime-main.js": "/wether-test-task/static/js/runtime-main.c222d5db.js",
+    "runtime-main.js.map": "/wether-test-task/static/js/runtime-main.c222d5db.js.map",
+    "static/css/2.033f12b9.chunk.css": "/wether-test-task/static/css/2.033f12b9.chunk.css",
+    "static/js/2.f33f08cc.chunk.js": "/wether-test-task/static/js/2.f33f08cc.chunk.js",
+    "static/js/2.f33f08cc.chunk.js.map": "/wether-test-task/static/js/2.f33f08cc.chunk.js.map",
+    "index.html": "/wether-test-task/index.html",
+    "precache-manifest.e497f4c3ceab62e800fef0fc8adc847c.js": "/wether-test-task/precache-manifest.e497f4c3ceab62e800fef0fc8adc847c.js",
+    "service-worker.js": "/wether-test-task/service-worker.js",
+    "static/css/2.033f12b9.chunk.css.map": "/wether-test-task/static/css/2.033f12b9.chunk.css.map",
+    "static/css/main.fffd5f8c.chunk.css.map": "/wether-test-task/static/css/main.fffd5f8c.chunk.css.map",
+    "static/js/2.f33f08cc.chunk.js.LICENSE.txt": "/wether-test-task/static/js/2.f33f08cc.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/wether-test-task/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.f8d27cd5.js",
-    "static/css/2.7df41cd5.chunk.css",
-    "static/js/2.4e9fd2d5.chunk.js",
-    "static/css/main.18857360.chunk.css",
-    "static/js/main.13e80bce.chunk.js"
+    "static/js/runtime-main.c222d5db.js",
+    "static/css/2.033f12b9.chunk.css",
+    "static/js/2.f33f08cc.chunk.js",
+    "static/css/main.fffd5f8c.chunk.css",
+    "static/js/main.9e701988.chunk.js"
   ]
 }
