@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/wether-test-task/static/css/main.fffd5f8c.chunk.css",
-    "main.js": "/wether-test-task/static/js/main.9e701988.chunk.js",
-    "main.js.map": "/wether-test-task/static/js/main.9e701988.chunk.js.map",
+    "main.js": "/wether-test-task/static/js/main.b07960d2.chunk.js",
+    "main.js.map": "/wether-test-task/static/js/main.b07960d2.chunk.js.map",
     "runtime-main.js": "/wether-test-task/static/js/runtime-main.c222d5db.js",
     "runtime-main.js.map": "/wether-test-task/static/js/runtime-main.c222d5db.js.map",
     "static/css/2.033f12b9.chunk.css": "/wether-test-task/static/css/2.033f12b9.chunk.css",
     "static/js/2.f33f08cc.chunk.js": "/wether-test-task/static/js/2.f33f08cc.chunk.js",
     "static/js/2.f33f08cc.chunk.js.map": "/wether-test-task/static/js/2.f33f08cc.chunk.js.map",
     "index.html": "/wether-test-task/index.html",
-    "precache-manifest.e497f4c3ceab62e800fef0fc8adc847c.js": "/wether-test-task/precache-manifest.e497f4c3ceab62e800fef0fc8adc847c.js",
+    "precache-manifest.1147a87fce393bacb2057cf82a931d1c.js": "/wether-test-task/precache-manifest.1147a87fce393bacb2057cf82a931d1c.js",
     "service-worker.js": "/wether-test-task/service-worker.js",
     "static/css/2.033f12b9.chunk.css.map": "/wether-test-task/static/css/2.033f12b9.chunk.css.map",
     "static/css/main.fffd5f8c.chunk.css.map": "/wether-test-task/static/css/main.fffd5f8c.chunk.css.map",
@@ -21,6 +21,6 @@
     "static/css/2.033f12b9.chunk.css",
     "static/js/2.f33f08cc.chunk.js",
     "static/css/main.fffd5f8c.chunk.css",
-    "static/js/main.9e701988.chunk.js"
+    "static/js/main.b07960d2.chunk.js"
   ]
 }

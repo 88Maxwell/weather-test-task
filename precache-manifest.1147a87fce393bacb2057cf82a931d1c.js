@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "714c23d195f55e0a19002534b8c84c48",
+    "revision": "b78140fc1c677ae584f39bad449c6196",
     "url": "/wether-test-task/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wether-test-task/static/css/2.033f12b9.chunk.css"
   },
   {
-    "revision": "f8a44a613193ac0f85e2",
+    "revision": "2f01ec485374e32c2736",
     "url": "/wether-test-task/static/css/main.fffd5f8c.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/wether-test-task/static/js/2.f33f08cc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "f8a44a613193ac0f85e2",
-    "url": "/wether-test-task/static/js/main.9e701988.chunk.js"
+    "revision": "2f01ec485374e32c2736",
+    "url": "/wether-test-task/static/js/main.b07960d2.chunk.js"
   },
   {
     "revision": "609a20033075f8828561",
