@@ -6,7 +6,7 @@ const {
 
 export default {
     common : {
-        publicUrl : process.env.REACT_APP_PUBLIC_URL
+        publicUrl : process.env.PUBLIC_URL
     },
     openWeatherMap : {
         apiUrl : REACT_APP_API_URL,
