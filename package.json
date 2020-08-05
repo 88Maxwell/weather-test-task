@@ -1,6 +1,6 @@
 {
     "name": "weather-test-task",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "private": false,
     "homepage": "https://88maxwell.github.io/weather-test-task/",
     "dependencies": {
