@@ -3,18 +3,18 @@ import React, { useEffect, useState } from "react";
 import qs from "qs";
 import PropTypes from "prop-types";
 import {
-    Grid, Loader, Message, Dropdown, Button, Segment, Header
+    Grid, Loader, Message, Dropdown, Segment, Header
 } from "semantic-ui-react";
-import WetherWidget from "../../Wether/WetherWidget";
+import { Link } from "react-router-dom";
+import WeatherWidget from "../../Weather/WeatherWidget";
 import usePosition from "../../../hooks/usePosition";
 import LoaderHelper from "../LoaderHelper";
-import { cities } from "../../../domens/Wether/constants";
+import { cities } from "../../../domens/Weather/constants";
 
 function StartPage({
-    wetherState, wetherError, wether, onGetWether, onOpenWetherByCity, location
+    weatherState, weatherError, weather, onGetWeather, location
 }) {
     const { position } = usePosition(false);
-    const [ dropdownValue, setDropdownValue ] = useState(null);
     const [ warningVisible, setWarningVisible ] = useState(true);
 
     const { city } = qs.parse(location.search.slice(1));
@@ -23,29 +23,27 @@ function StartPage({
         const { latitude: lat, longitude: lon } = position || {};
 
         if (city) {
-            onGetWether({ city });
+            onGetWeather({ city });
         } else {
-            onGetWether({ lat, lon });
+            onGetWeather({ lat, lon });
         }
-    }, [ onGetWether, city, position ]);
+    }, [ onGetWeather, city, position ]);
 
     const handleDismissWarning = () => setWarningVisible(false);
-    const handleChangeDropdownValue = (e, { value }) => setDropdownValue(value);
-    const handleOpenWetherByCity = () => dropdownValue && onOpenWetherByCity({ city: dropdownValue });
 
     return (
         <Grid as="main" verticalAlign="middle" padded centered>
             <Grid.Row>
                 {position ? (
                     <LoaderHelper
-                        data={wether}
-                        state={wetherState}
+                        data={weather}
+                        state={weatherState}
                         LoadingComponent={<Loader active />}
-                        DataComponent={<WetherWidget wether={wether} />}
+                        DataComponent={<WeatherWidget weather={weather} />}
                         ErrorComponent={(
                             <Message negative>
                                 <Message.Header>Something happened wrong!</Message.Header>
-                                <p>{wetherError}</p>
+                                <p>{weatherError}</p>
                             </Message>
                         )}
                     />
@@ -60,17 +58,20 @@ function StartPage({
 
             <Grid.Row>
                 <Segment>
-                    <Header>Watch wether by city</Header>
-                    <Dropdown
-                        onChange={handleChangeDropdownValue}
-                        options={cities}
-                        placeholder="Choose an option"
-                        selection
-                        value={dropdownValue}
-                    />
-                    <Button disabled={!dropdownValue} onClick={handleOpenWetherByCity}>
-                        Watch
-                    </Button>
+                    <Header>Watch weather by city</Header>
+                    <Dropdown text="Choose an option">
+                        <Dropdown.Menu>
+                            {cities.map((el) => (
+                                <Link
+                                    key={el.text}
+                                    component={Dropdown.Item}
+                                    to={`/weather?city=${el.value}`}
+                                >
+                                    {el.text}
+                                </Link>
+                            ))}
+                        </Dropdown.Menu>
+                    </Dropdown>
                 </Segment>
             </Grid.Row>
         </Grid>
@@ -78,18 +79,17 @@ function StartPage({
 }
 
 StartPage.propTypes = {
-    onOpenWetherByCity : PropTypes.func.isRequired,
-    onGetWether        : PropTypes.func.isRequired,
-    location           : PropTypes.object.isRequired,
-    wetherState        : PropTypes.string,
-    wetherError        : PropTypes.any,
-    wether             : PropTypes.object
+    onGetWeather : PropTypes.func.isRequired,
+    location     : PropTypes.object.isRequired,
+    weatherState : PropTypes.string,
+    weatherError : PropTypes.any,
+    weather      : PropTypes.object
 };
 
 StartPage.defaultProps = {
-    wetherState : null,
-    wetherError : null,
-    wether      : null
+    weatherState : null,
+    weatherError : null,
+    weather      : null
 };
 
 export default StartPage;

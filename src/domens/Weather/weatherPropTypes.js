@@ -6,15 +6,17 @@ export default {
         lon : PropTypes.number,
         lat : PropTypes.number
     }),
-    weather : PropTypes.arrayOf(
-        PropTypes.shape({
-            id          : PropTypes.number,
-            main        : PropTypes.string,
-            description : PropTypes.string,
-            icon        : PropTypes.string
-        })
-    ),
-
+    weather : PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.arrayOf(
+            PropTypes.shape({
+                id          : PropTypes.number,
+                main        : PropTypes.string,
+                description : PropTypes.string,
+                icon        : PropTypes.string
+            })
+        )
+    ]),
     base : PropTypes.string,
     main : PropTypes.shape({
         temp     : PropTypes.number,

@@ -1,7 +1,7 @@
 import RequestClient from "../Common/RequestClient";
 import config from "../../config";
 
-const openWetherApiMapRequest = new RequestClient(
+const openweatherApiMapRequest = new RequestClient(
     {
         apiUrl : config.openWeatherMap.apiUrl,
         prefix : config.openWeatherMap.prefix
@@ -12,5 +12,5 @@ const openWetherApiMapRequest = new RequestClient(
 );
 
 export default {
-    getWether : (params) => openWetherApiMapRequest.get("/weather", null, params)
+    getweather : (params) => openweatherApiMapRequest.get("/weather", null, params)
 };

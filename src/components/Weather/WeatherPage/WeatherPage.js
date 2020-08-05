@@ -5,28 +5,26 @@ import PropTypes from "prop-types";
 import {
     Grid, Loader, Message, Button, Segment
 } from "semantic-ui-react";
-import WetherWidget from "../WetherWidget";
-import usePosition from "../../../hooks/usePosition";
+import WeatherWidget from "../WeatherWidget";
 import LoaderHelper from "../../Common/LoaderHelper";
+import usePosition from "../../../hooks/usePosition";
 
-function WetherPage({
-    wetherState, wetherError, wether, onGetWether, onGoBack, location
+function WeatherPage({
+    weatherState, weatherError, weather, onGetWeather, onGoBack, location
 }) {
     const { position } = usePosition(false);
-
     const { search } = location;
-
     const { city } = qs.parse(search.slice(1));
 
     useEffect(() => {
         const { latitude: lat, longitude: lon } = position || {};
 
         if (city) {
-            onGetWether({ city });
+            onGetWeather({ city });
         } else {
-            onGetWether({ lat, lon });
+            onGetWeather({ lat, lon });
         }
-    }, [ onGetWether, city, position ]);
+    }, [ onGetWeather, city, position ]);
 
 
     return (
@@ -38,14 +36,14 @@ function WetherPage({
             </Grid.Row>
             <Grid.Row>
                 <LoaderHelper
-                    data={wether}
-                    state={wetherState}
+                    data={weather}
+                    state={weatherState}
                     LoadingComponent={<Loader active />}
-                    DataComponent={<WetherWidget wether={wether} />}
+                    DataComponent={<WeatherWidget weather={weather} />}
                     ErrorComponent={(
                         <Message negative>
                             <Message.Header>Something happened wrong!</Message.Header>
-                            <p>{wetherError}</p>
+                            <p>{weatherError}</p>
                         </Message>
                     )}
                 />
@@ -54,19 +52,19 @@ function WetherPage({
     );
 }
 
-WetherPage.propTypes = {
-    onGoBack    : PropTypes.func.isRequired,
-    onGetWether : PropTypes.func.isRequired,
-    location    : PropTypes.object.isRequired,
-    wetherState : PropTypes.string,
-    wetherError : PropTypes.any,
-    wether      : PropTypes.object
+WeatherPage.propTypes = {
+    onGoBack     : PropTypes.func.isRequired,
+    onGetWeather : PropTypes.func.isRequired,
+    location     : PropTypes.object.isRequired,
+    weatherState : PropTypes.string,
+    weatherError : PropTypes.any,
+    weather      : PropTypes.object
 };
 
-WetherPage.defaultProps = {
-    wetherState : null,
-    wetherError : null,
-    wether      : null
+WeatherPage.defaultProps = {
+    weatherState : null,
+    weatherError : null,
+    weather      : null
 };
 
-export default WetherPage;
+export default WeatherPage;

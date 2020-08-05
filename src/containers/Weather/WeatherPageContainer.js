@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 import { withRouter } from "react-router";
-import { push } from "connected-react-router";
-import StartPage from "../../components/Common/StartPage";
+import { goBack } from "connected-react-router";
+import WeatherPage from "../../components/Weather/WeatherPage";
 
 import { getWeatherState, getWeatherError, getWeather } from "../../reducers/weather/current";
 import getWeatherAction from "../../actions/getWeather";
@@ -14,8 +14,8 @@ const mapState = createStructuredSelector({
 });
 
 const mapDispatch = (dispatch) => ({
-    onGetWeather        : ({ lat, lon, city }) => dispatch(getWeatherAction({ lat, lon, city })),
-    onOpenWeatherByCity : ({ city }) => dispatch(push(`/weather?city=${city}`))
+    onGetWeather : ({ lat, lon, city }) => dispatch(getWeatherAction({ lat, lon, city })),
+    onGoBack     : () => dispatch(goBack())
 });
 
-export default withRouter(connect(mapState, mapDispatch)(StartPage));
+export default withRouter(connect(mapState, mapDispatch)(WeatherPage));

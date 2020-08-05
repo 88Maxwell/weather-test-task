@@ -16,7 +16,7 @@ function LoaderHelper({
 LoaderHelper.propTypes = {
     // eslint-disable-next-line react/forbid-prop-types
     data             : PropTypes.any,
-    state            : PropTypes.oneOf([ "error", "loaded", "loading" ]).isRequired,
+    state            : PropTypes.oneOf([ "error", "loaded", "loading" ]),
     LoadingComponent : PropTypes.node.isRequired,
     ErrorComponent   : PropTypes.node.isRequired,
     DataComponent    : PropTypes.node.isRequired
@@ -24,7 +24,8 @@ LoaderHelper.propTypes = {
 
 
 LoaderHelper.defaultProps = {
-    data : null
+    data  : null,
+    state : null
 };
 
 export default LoaderHelper;
