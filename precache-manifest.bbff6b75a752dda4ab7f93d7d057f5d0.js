@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7c5cd0c0dca20cecfb877325d4b1bf37",
+    "revision": "e8f92d2ad33d384084011b920f30d949",
     "url": "/wether-test-task/index.html"
   },
   {
-    "revision": "f4bc9d5fe5b4df018cd4",
+    "revision": "2ca412593a9e50bfeafe",
     "url": "/wether-test-task/static/css/2.033f12b9.chunk.css"
   },
   {
-    "revision": "0236185c74454ba4a89a",
+    "revision": "9776fa813fa22628d706",
     "url": "/wether-test-task/static/css/main.fffd5f8c.chunk.css"
   },
   {
-    "revision": "f4bc9d5fe5b4df018cd4",
-    "url": "/wether-test-task/static/js/2.ec17a869.chunk.js"
+    "revision": "2ca412593a9e50bfeafe",
+    "url": "/wether-test-task/static/js/2.609547c0.chunk.js"
   },
   {
     "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/wether-test-task/static/js/2.ec17a869.chunk.js.LICENSE.txt"
+    "url": "/wether-test-task/static/js/2.609547c0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0236185c74454ba4a89a",
-    "url": "/wether-test-task/static/js/main.107e2232.chunk.js"
+    "revision": "9776fa813fa22628d706",
+    "url": "/wether-test-task/static/js/main.fe647346.chunk.js"
   },
   {
     "revision": "609a20033075f8828561",
